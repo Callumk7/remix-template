@@ -1,38 +1,17 @@
-# Welcome to Remix!
+# Modular Remix Template
 
-- [Remix Docs](https://remix.run/docs)
+I start a lot of projects, and Remix is in my mind a perfect platform for new React projects thanks to its great SSR, routing, and loader / action design. I made this template to speed up the initial development step by setting up the aspects of a new project that should always stay the same:
 
-## Development
+-   styling (right now that is Tailwind)
+-   database connection and ORM (TBD)
+-   authentication (simple email and password, can be adapted)
 
-From your terminal:
+## Setup
 
-```sh
-npm run dev
-```
+1. Start by creating a new project from this template
+2. Choose your own database setup, and setup a .env file etc.
+3. Hook up the database....
 
-This starts your app in development mode, rebuilding assets on file changes.
+## Working Notes
 
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
+Might setup a SQLite database to start things off for really quick prototyping. I am not sure how this might impact various hosting options that I might use (Vercel, fly.io, Railway, etc.)
