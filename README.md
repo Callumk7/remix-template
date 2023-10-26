@@ -15,3 +15,7 @@ I start a lot of projects, and Remix is in my mind a perfect platform for new Re
 ## Working Notes
 
 Might setup a SQLite database to start things off for really quick prototyping. I am not sure how this might impact various hosting options that I might use (Vercel, fly.io, Railway, etc.)
+
+## Storage Setup
+
+I am going to try BetterSqlite3 to start things off with drizzle, and see how this works when hooking it up to the simple authentication that we setup earlier.

@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1698312057783,
+      "tag": "0000_naive_franklin_storm",
+      "breakpoints": true
+    }
+  ]
+}
