@@ -21,6 +21,9 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <form action="/sign-out" method="POST">
+          <button>Logout</button>
+        </form>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
