@@ -2,11 +2,13 @@ import { Authenticator } from "remix-auth";
 import { FormStrategy } from "remix-auth-form";
 import { sessionStorage } from "./session.server";
 import invariant from "tiny-invariant";
+import { db } from "db";
+import { eq } from "drizzle-orm";
+import { users } from "db/schema";
 
 export interface UserData {
-	id: string;
-	name?: string;
-	username: string;
+	id: number;
+	fullName: string | null;
 	email: string;
 }
 
@@ -24,21 +26,18 @@ authenticator.use(
 		invariant(password.length > 0, "password must not be empty");
 
 		const user = await login(email, password);
-		console.log(`user: ${user.username}`);
+		console.log(`user: ${user.fullName}`);
 		return user;
 	}),
 	"user-pass",
 );
 
-// This function should be completed with proper logic
-const login = (email: string, password: string) => {
-	// find a user and return it's data
-	// db.findUnique... where...
-	const user = {
-		id: "1231asdas",
-		name: "Test Subject",
-		username: "LargeAndy",
-		email: "andyL@email.com",
-	};
-	return user;
+const login = async (email: string, password: string) => {
+	const foundUser = await db.query.users.findFirst({
+		where: eq(users.email, email),
+	});
+
+	invariant(foundUser, "No user found");
+
+	return foundUser;
 };
